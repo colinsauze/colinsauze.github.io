@@ -1,0 +1,106 @@
+<h2>Background</h2>
+
+    <p>
+        I originally wrote this tutorial back in 2003 to make timelapse videos with my laptop and Mandrake Linux. However 10 years on, these instructions are still relevant for anyone wanting to make timelapse videos on a modern Linux distribution. I have rechecked everything here with Ubuntu 12.04 and it still seems to work.</a>
+        <br/>
+</p>
+    <p>
+        This technique should work with ANY video4linux compatible capture device
+        as long as mencoder works with it. This includes most webcams, frame grabbers and analogue TV cards/USB sticks. Using a framegrabber or TV card you could connect up any analogue video camera.
+    </p>
+
+<h2>The first try</h2>
+
+    <p>
+        To build the initial video, I simply recorded an avi in mencoder at a very
+        low frame rate, without audio using the MJPEG codec. I then processed this
+        file so that the output frame rate was 25 frames per second. Finally I compressed
+        the MJPEG videos to MPEG4 or MPEG1,
+        which resulted in files of a couple of megabytes, down from 30 or 40 megabyte originals.
+    </p>
+
+
+    <p>
+        I later found you can also capture directly into Divx.
+    </p>
+
+
+    <h2>Alternative methods:</h2>
+
+    <p>
+
+
+        A series of JPEG images can be built into an AVI, this could make it possible
+        to build a timelapse from an internet acessible webcam. Mencoder has an
+        option  for encoding from multiple JPEG files. However watch out for it encoding
+        images in the wrong order. I have written a little java program, that renames
+        a series of jpeg files so that the oldest one is called 00000.jpg and the
+        next 000001.jpg etc. This ensures mencoder gets the right order.
+    </p>
+
+    <p>
+        Other video capture software can be used to record timelapses. I have sucessfully
+        used Microsoft Vidcap (<a href="www.virtualdub.org">virtual dub</a> can
+        probably do this too) to record timelapses on a windows machine. Simply by
+        specifying a very low frame rate (e.g. 0.1) and recording for several minutes/hours.
+        Once recorded convert the frame rate to 25fps (or whatever you want) using
+        either mencoder (only available on unix/cygwin) or a windows utility like
+        <a href="http://www.am-soft.ru/avifrate.html">avifrate</a>.
+        Or anything else that allows you to change the frame rate in the AVI header.
+    </p>
+
+    <h2>Exact mencoder options I used:</h2>
+
+    <h3>to capture the inital video:</h3>
+
+    <p class="code">
+        mencoder -tv on:driver=v4l:height=480:width=640:noaudio -ovc lavc -lavcopts vcodec=mjpeg -ofps 0.1 -o timelapse.avi
+    </p>
+
+    <h3>or to capture straight to Divx</h3>
+
+    <p class="code">
+        mencoder -tv on:driver=v4l:height=480:width=640:noaudio -ovc lavc -lavcopts vcodec=mpeg4:vbitrate=1500:vhq -ofps 0.1 -o timelapse.avi
+    </p>
+
+    <h4>to alter the frame rate to 25 frames per second:<br/></h4>
+
+
+    <p class="code">
+        mencoder timelapse.avi -ovc copy -ofps 25 -noskip -o timelapse-25fps.avi
+    </p>
+
+    <h4>to convert MJPEG (or anything else) to Divx MPEG4 video:<br/></h4>
+
+    <p class="code">
+    mencoder timelapse-25fps.avi -ovc lavc -lavcopts vcodec=mpeg4:vbitrate=1500:vhq
+    -nosound -o timelapse-divx.avi
+    </p>
+
+    <h3>to create an MPEG 1 video:<br/></h3>
+
+    
+    <div class="code">
+    <p>
+    mencoder timelapse-25fps.avi -ovc lavc -lavcopts vcodec=mpeg1video:vbitrate=1500:vhq
+      -nosound -o timelapse-mpeg1.mpg
+    </p>
+    </div>
+
+    <h3>to make a timelapse from a series of jpeg images:<br/><br/></h3>
+
+    <p>
+        In order to get these images you will have to write something to download
+        them/grab them. Or you can use the archive option in
+        <a href="http://bytesex.org/xawtv/">xawtv</a>'s webcam program.<br/>
+    </p>
+
+
+   
+    <div class="code">
+        <p>
+	    mencoder \*.jpg -mf on:fps=25:type=jpeg -ovc lavc -lavcopts vcodec=mjpeg -o timelapse-25fps.avi
+        </p>	
+    </div>
+
+

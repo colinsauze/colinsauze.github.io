@@ -1,0 +1,240 @@
+body {
+    font-size: 100%;
+    background: #ffffff;
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+a:link
+{
+	color: #2096ff;
+}
+
+a:hover
+{
+   /*background-color: #9999ff;*/	
+	text-decoration: none;
+}
+
+/* ------------ title related styles ----------*/
+
+.title_box {
+    /*margin: 0 auto;*/
+    background-color: rgb(216, 216, 216); 
+    width: 700px;
+    height: 100px; 
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+border-radius:10px;
+-moz-border-radius:10px; /* Firefox 3.6 and earlier */
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+#title 
+{
+    background-repeat: no-repeat;
+    padding-left: 2%;
+    color: #aa0000;
+    float: left;
+    font-family: "Lucida Grande","Lucida Sans Unicode",helvetica,arial;
+}
+
+#title h1 
+{
+    font-size: 150%;
+}
+
+/* ----------- the main content pain ------------- */
+
+.content_box {
+    float: left;
+    margin-left: 5%; 
+    margin-right: 5%;
+    /*margin: 0 auto;*/
+    /*border-width: 1px;
+    border-style: solid;
+    border-color: #aaaaaa; 
+    border-radius:25px;
+-moz-border-radius:25px;*/
+    border: none;
+    font-size: 14px;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;                                                                                                                                                                              
+    float: left;
+    color: rgb(102, 102, 102);
+    text-align: justify;
+  border-radius:5px;
+border-width: 1px;
+    -moz-border-radius:5px;
+    min-width: 350px;
+    
+}
+
+
+}
+
+.content_box h2
+{
+    color: #44aa00;
+    font-size: 26px;
+}
+
+.content_box h3
+{
+	font-family: helvetica, arial, freesans;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.content_box p
+{
+	margin-left: 1.5em;
+}
+
+.content_box dl 
+{
+    line-height: 140%;
+    margin-bottom: 1em;
+}
+
+.content_box dd 
+{
+    margin-left: 1em;
+    font-size: small;	
+}
+	
+.content_box dt 
+{
+   font-weight: bolder;
+}
+	
+.content_box ol
+{
+    font-style: italic;
+    line-height: 140%;
+}
+
+.content_box li
+{
+    padding-top: 1%;
+    /*list-style: none;*/
+}
+
+.mainbody_image
+{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/*NAVIGATION BAR*/
+
+#nav {
+    border: none;
+    font-size: 16px;
+    padding-left: 10px;
+    float: left;
+    margin-right: 2px;
+    margin-left: 0px;
+    color: black;
+} 
+
+#nav a {
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background:rgb(216, 216, 216);
+    padding-left: 3px;
+    padding-right: 15px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-right: 4px;
+    font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
+}
+
+#nav a:hover, #nav a:active, #nav a:focus {
+    text-decoration: none; 
+    width: 200px;
+    background-color: rgb(35, 176, 229);
+    	-webkit-transition: all 500ms ease;
+	-moz-transition: all 500ms ease;
+	-ms-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+
+
+
+/* ---------- page footer ------------- */
+
+#footer {
+    color : #999999; 
+    font-size: 0.75em;
+    padding-top: 6px;
+    margin: 0 0 0 0px;
+    clear: both;
+    border-top: 1px;
+    border-right: 1px;
+    border-left: 1px;
+    border-bottom: 1px;
+   padding: 2px 2px 2px 2px;
+border-style: solid; 
+   
+}
+#footer p {
+    margin: 0;
+}
+
+#w3c
+{
+    margin: 0 auto;
+    width: 800px;
+    margin-top: 1.5%;
+}
+
+.img_container ul
+{
+    float: left;
+    list-style-type: none;
+    border-width: thin;
+    border-color: gray;
+    border-style: none;
+    width: 120px;
+    height: 100px;
+    padding: 1% 1% 1% 1%;
+    margin-right: 10px;
+}
+
+.img_container img
+{
+    margin-left: 10%;
+    margin-right: 10%;
+    border-width: 1px;
+    border-color: black;
+}
+
+/*.img_container a:link,a:visited
+{
+    border-style: none;
+
+    color: gray;
+}
+*/
+
+.img_container a:hover
+{
+    background-color: white;
+    text-decoration: none;
+    border-color: orange;
+    border-width: 2px;
+}
+
+.img_title
+{
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: left;
+    border-width: thin;
+    border-color: black;
+}
+
